@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet/less" href="less/discount.less">
+    <script src="lib/less/less.js"></script>
+
+</head>
+
+<body>
+    <!--  头部区域 -->
+    <header id="header">
+        <div class="header-box">
+            <div class="logo">
+                <h1>
+                    <a href="#">
+                        <img src="./images/mlogo.png" alt="">
+                    </a>
+                </h1>
+            </div>
+            <div class="searchBox">
+                <form action="Search.aspx" method="get">
+                    <i class="icon-search"></i>
+                    <input type="search" name="" id="" placeholder="搜索商品名称" autocomplete="false">
+                </form>
+            </div>
+            <div class="download">
+                <a target="_blank" href="http://m.manmanbuy.com/app.html?type=cuxiao&amp;value=waphead">下载</a>
+            </div>
+        </div>
+        <div class="header-tab">
+            <div class="scroller">
+                <ul class="clearfix">
+                    <li class="">
+                        <a href="https://m.manmanbuy.com/">首页</a>
+                    </li>
+                    <li class="">
+                        <a href="cuxiao.aspx">省钱控</a>
+                    </li>
+                    <li class="">
+                        <a href="listclass.aspx">比价搜索</a>
+                    </li>
+                    <li class="on">
+                        <a href="guoneizhekou.aspx" class="on">国内折扣</a>
+                    </li>
+                    <li class="">
+                        <a href="http://tool.manmanbuy.com/m/history.aspx">查历史价</a>
+                    </li>
+                    <li class="">
+                        <a href="http://baicai.manmanbuy.com/m/index.aspx">白菜价</a>
+                    </li>
+                    <li class="">
+                        <a href="http://m.manmanbuy.com/defaultsharehot.aspx">小时风云榜</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体部分 -->
+    <main id="main">
+        <div class="cu-friend">
+            <ul></ul>
+        </div>
+    </main>
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="menu">
+            <a href="http://m.manmanbuy.com">首页</a>
+            &nbsp;&gt;&nbsp;
+            <a href="http://m.manmanbuy.com/guoneizhekou.aspx.aspx">国内折扣</a>
+        </div>
+        <div class="foot_top">
+            <a href="http://m.manmanbuy.com/login.aspx">登录</a>
+            <a href="reg.aspx">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部</a>
+        </div>
+        <div class="foot">
+            <p>
+                <a href="http://m.manmanbuy.com/?o=download" onclick="trackEvent('footer头部下载');" style="color: Red;">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                m.manmanbuy.com
+                <img src="https://c.cnzz.com/wapstat.php?siteid=1256699064&amp;r=https%3a%2f%2fm.manmanbuy.com%2fcuxiao.aspx&amp;rnd=297513351"
+                    width="0" height="0">
+            </p>
+        </div>
+    </footer>
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="lib/js/discount.js"></script>
+</body>
+
+</html>
+<script src="lib/js/template-web.js"></script>
+<script type="text/html" id="tpl">
+    {{each list value}}
+    <li class="border-img">
+        <a href="zhekou.aspx?id={{value.id}}" title="良品铺子 750g零食 手撕面包 *8件 122.4元（合15.3元/件）">
+            <div class="img">
+                <img src="http://wnzk-qiniu.zuyushop.com/r_img/img/20180903/08/e61dd8a51aae4c719a6143fcd5f9c292.jpg">
+            </div>
+            <div class="title">良品铺子 750g零食 手撕面包 *8件</div>
+            <div class="subtit">122.4元（合15.3元/件）</div>
+            <div class="info">
+                <div class="mall">京东商城 | 2018/9/25 20:30</div>
+            </div>
+        </a>
+    </li>
+</script>
+
+<script>
+    $.get({
+        url:'http://mmb.ittun.com/api/getinlanddiscount',
+        dataType:'json',
+        success:function(obj){
+            console.log(obj);
+        }
+    })
+</script>
